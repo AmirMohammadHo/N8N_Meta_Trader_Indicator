@@ -377,7 +377,8 @@
             const wrapperDiv = document.createElement('div');
             wrapperDiv.className = `message-wrapper ${sender}`;
             
-            const msgId = 'msg-' + Date.now();
+            // Fixed ID collision bug by adding a random number to the timestamp
+            const msgId = 'msg-' + Date.now() + '-' + Math.floor(Math.random() * 10000);
             wrapperDiv.id = msgId;
 
             const msgDiv = document.createElement('div');
